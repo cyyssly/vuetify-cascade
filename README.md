@@ -15,6 +15,7 @@
 #### 3.1. Copy Cascade.vue to the project directory, such as src/components/. 
 
 #### 3.2. 调用/Use：
+```vue
   <v-menu v-model="item.menu" :close-on-content-click="false">
     <template v-slot:activator="{ on }">
       <v-text-field
@@ -32,8 +33,9 @@
       :ApiHref="item.api"
       @input="item.menu = !item.menu"
     ></Cascade>
-  </v-menu>
-  
+  </v-menu>  
+```
+```js
   data: () => ({
     item: {
       label: "省市区",
@@ -45,6 +47,7 @@
       api: "/console/checkarea"
     }
   })
+```
   
 ### 4. 源码解析/Source code analysis
 Cascade 接受5个传入的参数，并通过 input 事件传出用户选择结果。  
