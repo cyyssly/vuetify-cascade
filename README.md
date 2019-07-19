@@ -58,12 +58,14 @@ Cascade accepts 5 incoming parameters and passes the user selection result via t
 (2) Tabs: Array  
 级别：格式为数组，例如：['省', '市', '区']，会生成一个三级的级联选择框。  
 (3) Items: Array   
-Items是一个复杂的嵌套对象数组，格式类似于：  
+Items是一个复杂的嵌套对象数组，格式类似于：
+```js
   [
     [ {id:1, text:'item1'}, {id:2, text:'item2'} ],
     [ {id:1, text:'item1', pid:1}, {id:2, text:'item2', pid:1}, {id:3, text:'item3', pid:2} ],
     [ {id:1, text:'item1', pid:1}, {id:2, text:'item2', pid:2}, {id:3, text:'item3', pid:3} ]
   ]
+```
 其中第一层的数组为级联下拉选择框每一级的可选项。  
 第二层的对象中 text 为该级选项显示内容，id 为选中值，pid 为父级节点 id。  
 (4) AsyncMode: Boolean;   
@@ -72,10 +74,15 @@ Items是一个复杂的嵌套对象数组，格式类似于：
 其他层级数据将在选中第一级选项的具体节点后，通过访问 API 接口从后台异步获取。  
 使用异步加载需要设置 AsyncMode 的值为 true，并提供获取后台数据的 API 地址。  
 组件访问地址时会提供以下参数：1.level：数据层级，从0开始, 数值；2.pid：上级父节点的id, 字符串  
-API 返回数据的格式要求与 Items 属性相同，是一个对象数组，不过对象中的 pid 可以忽略，例如：  
+API 返回数据的格式要求与 Items 属性相同，是一个对象数组，不过对象中的 pid 可以忽略，例如： 
+```js
   [ {id:1, text:'item1'}, {id:2, text:'item2'}, {id:3, text:'item3'} ]  
+```
 #### 4.1. 返回值/Return value  
-返回值为数组格式，例如：['node1','node2','node3']  
+返回值为数组格式，例如：
+```js
+['node1','node2','node3']  
+```
     
     
 
