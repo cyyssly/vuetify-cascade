@@ -55,12 +55,15 @@ Cascade 接受5个传入的参数，并通过 input 事件传出用户选择结�
 Cascade accepts 5 incoming parameters and passes the user selection result via the input() event  
 
 #### 4.1. 入参/Incoming parameters
+
 (1) Height: String  
 组件高度：当选项数量较多时，用于限制组件的高度，默认为300px。 
 Component height: When the number of options is large, it is used to limit the height of the component. The default is 300px.  
+
 (2) Tabs: Array  
 级别：格式为数组，例如：```['省', '市', '区']```，会生成一个三级的级联选择框。 
 Level: such as ```['level1', 'level2', 'level3']```, Will generate a three-level cascade selection box.
+
 (3) Items: Array   
 Items是一个复杂的嵌套对象数组，格式类似于：
 Items is a complex array of objects:  
@@ -75,11 +78,13 @@ Items is a complex array of objects:
 The first layer of the array is the option for each level of the cascade drop-down selection box.  
 第二层的对象中 text 为该级选项显示内容，id 为选中值，pid 为父级节点 id。  
 In the object of the second layer, text displays the content for the level option, id is the selected value, and pid is the parent node id.  
+
 (4) AsyncMode: Boolean    
 如果数据量比较大，建议使用异步加载模式以改善性能。在异步加载模式下，组件初始化时 Items 属性只需要提供第一级选项的数据，  
 If the amount of data is large, it is recommended to use asynchronous mode to improve performance. In asynchronous mode, the Items property only needs to provide data for the first level option when the component is initialized.  
 其他层级数据将在选中第一级选项的具体节点后，通过访问 API 接口从后台异步获取。 
 Other data will be acquired asynchronously by accessing the API interface after selecting the specific node of the first level option.  
+
 (5) ApiHref: String  
 使用异步加载需要设置 AsyncMode 的值为 true，并提供获取后台数据的 API 地址。 
 Using asynchronous loading requires setting the value of AsyncMode to true and providing an API address to get data.  
@@ -91,6 +96,7 @@ The format of the API return data is the same as the Items property, which is an
   [ {id:1, text:'item1'}, {id:2, text:'item2'}, {id:3, text:'item3'} ]  
 ```
 #### 4.1. 返回值/Return value  
+
 返回值为数组格式，例如：
 The return value is in array format, for example: 
 ```js
