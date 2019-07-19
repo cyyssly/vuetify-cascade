@@ -95,7 +95,7 @@ The format of the API return data is the same as the Items property, which is an
 ```js
   [ {id:1, text:'item1'}, {id:2, text:'item2'}, {id:3, text:'item3'} ]  
 ```
-#### 4.1. 返回值/Return value  
+#### 4.2. 返回值/Return value  
 
 返回值为数组格式，例如：
 The return value is in array format, for example: 
