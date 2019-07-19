@@ -75,12 +75,12 @@ Items is a complex array of objects:
 The first layer of the array is the option for each level of the cascade drop-down selection box.  
 第二层的对象中 text 为该级选项显示内容，id 为选中值，pid 为父级节点 id。  
 In the object of the second layer, text displays the content for the level option, id is the selected value, and pid is the parent node id.  
-(4) AsyncMode: Boolean;   
-(5) ApiHref: String  
+(4) AsyncMode: Boolean    
 如果数据量比较大，建议使用异步加载模式以改善性能。在异步加载模式下，组件初始化时 Items 属性只需要提供第一级选项的数据，  
 If the amount of data is large, it is recommended to use asynchronous mode to improve performance. In asynchronous mode, the Items property only needs to provide data for the first level option when the component is initialized.  
-其他层级数据将在选中第一级选项的具体节点后，通过访问 API 接口从后台异步获取。  
+其他层级数据将在选中第一级选项的具体节点后，通过访问 API 接口从后台异步获取。 
 Other data will be acquired asynchronously by accessing the API interface after selecting the specific node of the first level option.  
+(5) ApiHref: String  
 使用异步加载需要设置 AsyncMode 的值为 true，并提供获取后台数据的 API 地址。 
 Using asynchronous loading requires setting the value of AsyncMode to true and providing an API address to get data.  
 组件访问地址时会提供以下参数：1.level：数据层级，从0开始, 数值；2.pid：上级父节点的id, 字符串  
