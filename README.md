@@ -7,7 +7,7 @@
 (1) 无限级数/Infinite cascade
 (2) 支持同步和异步数据/Support for synchronous and asynchronous data
 (3) 简短高效，只有84行代码/Short and efficient, only 84 lines of code
-![image](https://github.com/cyyssly/vuetify-confirm-dialog/blob/master/confirm.JPG)
+![image](https://github.com/cyyssly/vue-vuetify-cascade/blob/master/1.JPG)
 
 ### 3. 使用方法/Instructions: 
 
