@@ -96,13 +96,30 @@ Other data will be acquired asynchronously by accessing the API interface after 
 (5) ApiHref: String  
 使用异步加载需要设置 AsyncMode 的值为 true，并提供获取后台数据的 API 地址。 
 Using asynchronous loading requires setting the value of AsyncMode to true and providing an API address to get data.  
-组件访问地址时会提供以下参数：1.level：数据层级，从0开始, 数值；2.pid：上级父节点的id, 字符串  
-The following parameters are provided when the component accesses the API: 1.level: data level, starting from 0; 2.pid: id of the parent node, string.  
+组件访问地址时会提供以下参数：1.level：数据层级，从0开始, 数值；2.pid：上级父节点的id, 字符串；
+The following parameters are provided when the component accesses the API: 1.level: data level, starting from 0; 2.pid: id of the parent node, string. 
+API 需要实现的功能：根据传入的 pid 查询该节点的全部下级节点；
+The API needs to implement: query all subordinate nodes of the node according to the incoming param 'pid'.
 API 返回数据的格式要求与 Items 属性相同，是一个对象数组，不过对象中的 pid 可以忽略，例如：
 The format of the API return data is the same as the Items property, which is an array of objects, but the pid in the object can be ignored, for example:  
 ```js
   [ {id:1, text:'item1'}, {id:2, text:'item2'}, {id:3, text:'item3'} ]  
 ```
+后端伪代码示例：
+Backend pseudo code example: 
+```node
+async function(req, res) {
+  const strSQL = "SELECT `code` as id,`name` as text FROM extarea where `parentcode`=?";
+  const param = [req.body["pid"]];
+  try {
+    const results = await MysqlPool.dataQuery(strSQL, param);
+    res.send(results);
+  } catch (err) {
+    err => res.status(500).send(err);
+  }
+}
+```
+
 #### 4.2. 返回值/Return value  
 
 返回值为数组格式，分别是用户在每个级别选中的值，例如：
