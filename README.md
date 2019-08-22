@@ -105,7 +105,7 @@ The format of the API return data is the same as the Items property, which is an
 ```
 #### 4.2. 返回值/Return value  
 
-返回值为数组格式，例如：
+返回值为数组格式，分别是用户在每个级别选中的值，例如：
 The return value is in array format, for example: 
 ```js
 ['node1','node2','node3']  
