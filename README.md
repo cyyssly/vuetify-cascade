@@ -37,6 +37,13 @@
   </v-menu>  
 ```
 ```js
+<script>
+import CascadeD from '@/components/Cascade-district.vue'
+
+export default {
+  components: {
+    CascadeD
+  },
   data: () => ({
     item: {
       label: "省市区",
@@ -48,6 +55,7 @@
       api: "/console/checkarea"
     }
   })
+</script>
 ```
   
 ### 4. 源码解析/Source code analysis
