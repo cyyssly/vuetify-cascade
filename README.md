@@ -38,11 +38,11 @@
 ```
 ```js
 <script>
-import CascadeD from '@/components/Cascade-district.vue'
+import Cascade from '@/components/Cascade.vue'
 
 export default {
   components: {
-    CascadeD
+    Cascade
   },
   data: () => ({
     item: {
