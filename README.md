@@ -1,7 +1,14 @@
 # vuetify-cascade
-一个基于 vuetify 的级联下拉选择框/a cascade select component base on vuetify
+一个基于 vuetify 的级联选择框 
+a cascade select component base on vuetify
 
-### 1. 前置/Dependencies：vue、vuetify、lodash
+### 1. 前置/Dependencies：vue、vuetify、lodash 
+
+(1) 对组件的 <template> 部分稍加修改，也可以非常容易地支持其他组件库，但是意义不大，因为其他主流组件库已经自带了类似组件； 
+A slight modification to the <template> part of the component can also easily support other component libraries, but it is not significant because other mainstream component libraries already have similar components.   
+  
+(2) 组件中只使用了 lodash 的 cloneDeep 函数，你也可以自行修改源码，使其不依赖 lodash。 
+Only the `cloneDeep` function of `lodash` is used in the component, you can also modify the source code yourself to make it not depend on `lodash`.  
 
 ### 2. 特性/Features:
 (1) 无限级数/Infinite cascade  
@@ -12,10 +19,15 @@
 
 ### 3. 使用方法/Instructions: 
 
-#### 3.1. 复制 Cascade.vue 到项目目录下，例如 src/components/ 下。
-#### 3.1. Copy Cascade.vue to the project directory, such as src/components/. 
+#### 3.1. 复制 Cascade.vue 到项目目录下/Copy Cascade.vue to the project directory  
+例如 src/components/ 下。 
+such as src/components/.  
 
-#### 3.2. 调用/Use：
+#### 3.2. 调用/Use： 
+
+最常见的场景，是嵌套在一个下拉列表中： 
+The most common scenario is to be nested in a drop-down list:   
+
 ```vue
   <v-menu v-model="item.menu" :close-on-content-click="false">
     <template v-slot:activator="{ on }">
@@ -32,7 +44,7 @@
       :Items="item.items"
       :AsyncMode="item.async"
       :ApiHref="item.api"
-      @input="item.menu = !item.menu"
+      @input="item.menu=!item.menu"
     ></Cascade>
   </v-menu>  
 ```
@@ -44,29 +56,31 @@ export default {
   components: {
     Cascade
   },
-  data: () => ({
-    item: {
-      label: "省市区",
-      model: "",
-      tabs: ['level1', 'level2', 'level3'],
-      items: [ {id:1, text:'item1'}, {id:2, text:'item2'} ], // options for level1
-      menu: false,
-      async: true,
-      api: "/console/checkarea"
+  data() {
+    return {
+      item: {
+        label: "省市区",
+        model: [], // Array, values selected by the user at each level, for example: ['node1','node2','node3']
+        tabs: ['level1', 'level2', 'level3'],
+        items: [ {id:1, text:'item1'}, {id:2, text:'item2'} ], // options for level1
+        menu: false,
+        async: true,
+        api: "/console/checkarea"
+      }
     }
-  })
+  }
 </script>
 ```
   
-### 4. 源码解析/Source code analysis
+### 4. 源码解析/Source code analysis  
 Cascade 接受5个传入的参数，并通过 input 事件传出用户选择结果。  
 Cascade accepts 5 incoming parameters and passes the user selection result via the input() event  
 
 #### 4.1. 入参/Incoming parameters
 
-(1) Height: String  
-组件高度：当选项数量较多时，用于限制组件的高度，默认为300px。 
-Component height: When the number of options is large, it is used to limit the height of the component. The default is 300px.  
+(1) Height: String  on
+组件高度：当选项数量较多时，或者独立使用而不是嵌套在下拉列表中时，用于限制组件的高度，默认为300px。 
+Component height: When the number oof options is large, or when used independently instead of nested in a drop-down list, it is used to limit the height of the component. The default is 300px.  
 
 (2) Tabs: Array  
 级别：格式为数组，例如：```['省', '市', '区']```，会生成一个三级的级联选择框。 
