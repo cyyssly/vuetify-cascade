@@ -1,13 +1,13 @@
 # vuetify-cascade
-一个基于 vuetify 的级联选择框 
+一个基于 vuetify 的级联选择框  
 a cascade select component base on vuetify
 
 ### 1. 前置/Dependencies：vue、vuetify、lodash 
 
-(1) 对组件的 <template> 部分稍加修改，也可以非常容易地支持其他组件库，但是意义不大，因为其他主流组件库已经自带了类似组件； 
+(1) 对组件的 <template> 部分稍加修改，也可以非常容易地支持其他组件库，但是意义不大，因为其他主流组件库已经自带了类似组件；  
 A slight modification to the <template> part of the component can also easily support other component libraries, but it is not significant because other mainstream component libraries already have similar components.   
   
-(2) 组件中只使用了 lodash 的 cloneDeep 函数，你也可以自行修改源码，使其不依赖 lodash。 
+(2) 组件中只使用了 lodash 的 cloneDeep 函数，你也可以自行修改源码，使其不依赖 lodash。  
 Only the `cloneDeep` function of `lodash` is used in the component, you can also modify the source code yourself to make it not depend on `lodash`.  
 
 ### 2. 特性/Features:
