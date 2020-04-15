@@ -4,7 +4,7 @@ a cascade select component base on vuetify
 
 ### 1. 前置/Dependencies：vue、vuetify、lodash 
 
-(1) 对组件的 <template> 部分稍加修改，也可以非常容易地支持其他组件库，但是意义不大，因为其他主流组件库已经自带了类似组件；  
+(1) 对组件的 `<template>` 部分稍加修改，也可以非常容易地支持其他组件库，但是意义不大，因为其他主流组件库已经自带了类似组件；  
 A slight modification to the <template> part of the component can also easily support other component libraries, but it is not significant because other mainstream component libraries already have similar components.   
   
 (2) 组件中只使用了 lodash 的 cloneDeep 函数，你也可以自行修改源码，使其不依赖 lodash。  
@@ -13,7 +13,8 @@ Only the `cloneDeep` function of `lodash` is used in the component, you can also
 ### 2. 特性/Features:
 (1) 无限级数/Infinite cascade  
 (2) 支持同步和异步数据/Support for synchronous and asynchronous data  
-(3) 简短高效，只有84行代码/Short and efficient, only 84 lines of code  
+(3) 获取异步数据时支持 token 验证/Support token verification
+(4) 简短高效，只有84行代码/Short and efficient, only 84 lines of code  
 
 ![image](https://github.com/cyyssly/vue-vuetify-cascade/blob/master/1.JPG)
 
