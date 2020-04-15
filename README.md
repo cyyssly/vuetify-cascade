@@ -88,7 +88,7 @@ Component height: When the number oof options is large, or when used independent
 Level: such as ```['level1', 'level2', 'level3']```, Will generate a three-level cascade selection box.
 
 (3) items: Array   
-Items是一个复杂的嵌套对象数组，格式类似于：
+Items是一个复杂的嵌套对象数组，格式类似于： 
 Items is a complex array of objects:  
 ```js
   [
@@ -140,7 +140,7 @@ async function(req, res) {
 
 #### 4.2. 返回值/Return value  
 
-返回值为数组格式，分别是用户在每个级别选中的值，例如：
+返回值为数组格式，分别是用户在每个级别选中的值，例如：  
 The return value is in array format, is the value selected by the user at each level, for example: 
 ```js
 ['node1','node2','node3']  
