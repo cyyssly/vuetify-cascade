@@ -13,7 +13,7 @@ Only the `cloneDeep` function of `lodash` is used in the component, you can also
 ### 2. 特性/Features:
 (1) 无限级数/Infinite cascade  
 (2) 支持同步和异步数据/Support for synchronous and asynchronous data  
-(3) 获取异步数据时支持 token 验证/Support token verification
+(3) 获取异步数据时支持 token 验证/Support token verification  
 (4) 简短高效，只有84行代码/Short and efficient, only 84 lines of code  
 
 ![image](https://github.com/cyyssly/vue-vuetify-cascade/blob/master/1.JPG)
