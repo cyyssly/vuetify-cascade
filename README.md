@@ -74,8 +74,8 @@ export default {
 ```
   
 ### 4. 源码解析/Source code analysis  
-Cascade 接受6个传入的参数，并通过 input 事件传出用户选择结果。  
-Cascade accepts 6 incoming parameters and passes the user selection result via the input() event  
+Cascade 接受6个传入的参数，并通过 v-model 传出用户选择结果或接受预设值。  
+Cascade accepts 6 incoming parameters, passes the user selection result or accepts preset values via the v-model  
 
 #### 4.1. 入参/Incoming parameters
 
