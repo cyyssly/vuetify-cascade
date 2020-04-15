@@ -80,11 +80,11 @@ Cascade accepts 6 incoming parameters, passes the user selection result or accep
 #### 4.1. 入参/Incoming parameters
 
 (1) height: String  on
-组件高度：当选项数量较多时，或者独立使用而不是嵌套在下拉列表中时，用于限制组件的高度，默认为300px。 
+组件高度：当选项数量较多时，或者独立使用而不是嵌套在下拉列表中时，用于限制组件的高度，默认为300px。  
 Component height: When the number oof options is large, or when used independently instead of nested in a drop-down list, it is used to limit the height of the component. The default is 300px.  
 
 (2) tabs: Array  
-级别：格式为数组，例如：```['省', '市', '区']```，会生成一个三级的级联选择框。 
+级别：格式为数组，例如：```['省', '市', '区']```，会生成一个三级的级联选择框。  
 Level: such as ```['level1', 'level2', 'level3']```, Will generate a three-level cascade selection box.
 
 (3) items: Array   
@@ -97,7 +97,7 @@ Items is a complex array of objects:
     [ {id:1, text:'item1', pid:1}, {id:2, text:'item2', pid:2}, {id:3, text:'item3', pid:3} ]
   ]
 ```
-其中第一层的数组为级联下拉选择框每一级的可选项。 
+其中第一层的数组为级联下拉选择框每一级的可选项。  
 The first layer of the array is the option for each level of the cascade drop-down selection box.  
 第二层的对象中 text 为该级选项显示内容，id 为选中值，pid 为父级节点 id。  
 In the object of the second layer, text displays the content for the level option, id is the selected value, and pid is the parent node id.  
