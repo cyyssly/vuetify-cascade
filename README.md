@@ -79,7 +79,7 @@ Cascade accepts 6 incoming parameters, passes the user selection result or accep
 
 #### 4.1. 入参/Incoming parameters
 
-(1) height: String  on
+(1) height: String  
 组件高度：当选项数量较多时，或者独立使用而不是嵌套在下拉列表中时，用于限制组件的高度，默认为300px。  
 Component height: When the number oof options is large, or when used independently instead of nested in a drop-down list, it is used to limit the height of the component. The default is 300px.  
 
@@ -88,7 +88,7 @@ Component height: When the number oof options is large, or when used independent
 Level: such as ```['level1', 'level2', 'level3']```, Will generate a three-level cascade selection box.
 
 (3) items: Array   
-Items是一个复杂的嵌套对象数组，格式类似于： 
+Items是一个复杂的嵌套对象数组，格式类似于：   
 Items is a complex array of objects:  
 ```js
   [
@@ -123,7 +123,7 @@ The format of the API return data is the same as the Items property, which is an
 ```js
   [ {id:1, text:'item1'}, {id:2, text:'item2'}, {id:3, text:'item3'} ]  
 ```
-后端伪代码示例：
+后端伪代码示例：  
 Backend pseudo code example: 
 ```node
 async function(req, res) {
